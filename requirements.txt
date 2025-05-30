@@ -1,0 +1,11 @@
+python-dotenv>=1.0.0
+slack-sdk>=3.21.3
+jira>=3.4.0
+notion-client>=2.0.0
+openai>=1.0.0
+python-crontab>=3.0.0
+pydantic>=2.0.0
+python-dateutil>=2.8.2
+requests>=2.31.0
+langchain>=0.0.300
+tqdm>=4.65.0

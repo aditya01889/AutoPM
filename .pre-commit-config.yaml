@@ -1,0 +1,65 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-yaml
+    -   id: check-added-large-files
+    -   id: debug-statements
+    -   id: requirements-txt-fixer
+    -   id: check-ast
+    -   id: check-merge-conflict
+    -   id: check-symlinks
+    -   id: check-case-conflict
+    -   id: detect-private-key
+
+-   repo: https://github.com/psf/black
+    rev: 23.3.0
+    hooks:
+    - id: black
+      language_version: python3
+      types_or: [python, pyi]
+
+-   repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+    - id: isort
+      name: isort (python)
+      types: [python]
+
+-   repo: https://github.com/pycqa/flake8
+    rev: 6.0.0
+    hooks:
+    - id: flake8
+      additional_dependencies: [flake8-bugbear==23.3.23]
+
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.3.0
+    hooks:
+    - id: mypy
+      additional_dependencies: [types-requests, types-python-dateutil, types-pytz]
+      args: [--strict, --ignore-missing-imports]
+      exclude: '^tests/'
+
+-   repo: https://github.com/pre-commit/pygrep-hooks
+    rev: v1.10.0
+    hooks:
+    - id: python-check-blanket-noqa
+    - id: python-check-blanket-type-ignore
+    - id: python-use-type-annotations
+    - id: python-no-eval
+    - id: python-no-log-w-format-interpolation
+    - id: python-use-type-annotations
+    - id: rst-backticks
+    - id: rst-directive-colons
+    - id: rst-inline-touching-normal
+
+-   repo: https://github.com/abravalheri/validate-pyproject
+    rev: v0.13
+    hooks:
+    - id: validate-pyproject
+      additional_dependencies: [validate-pyproject[all]]
+
+ci:
+  skip: ["mypy"]  # mypy is slow, run it separately
