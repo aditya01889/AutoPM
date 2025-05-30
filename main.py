@@ -259,16 +259,90 @@ class AutoPM:
             raise
 
 
+async def demo_mode():
+    """Run AutoPM in demo mode with sample data"""
+    try:
+        # Force stdout to be unbuffered
+        import sys
+        import os
+        sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 1)
+        
+        print("🚀 Starting AutoPM in Demo Mode")
+        print("-" * 50)
+        print("Debug: Python version:", sys.version)
+        print("Debug: Current working directory:", os.getcwd())
+        print("Debug: Files in directory:", os.listdir('.'))
+    
+        # Sample data to demonstrate functionality
+        sample_updates = {
+            "slack": [
+                "Team meeting scheduled for tomorrow at 10 AM",
+                "New feature request from @alice: Add dark mode support",
+                "Bug reported by @bob: Login page not loading on mobile"
+            ],
+            "jira": [
+                "[PROJ-123] Implement user authentication - In Progress",
+                "[PROJ-124] Fix login page layout - Done",
+                "[PROJ-125] Add password reset feature - To Do"
+            ],
+            "notion": [
+                "Project timeline updated: Phase 1 completion delayed by 2 days",
+                "New document added: API Documentation v1.2",
+                "Meeting notes from 2023-05-30 uploaded"
+            ]
+        }
+        
+        # Display sample updates
+        print("📋 Sample Updates from Different Sources:")
+        for source, updates in sample_updates.items():
+            print(f"\n🔹 {source.upper()}:")
+            for update in updates:
+                print(f"   • {update}")
+        
+        # Simulate AI summarization
+        print("\n🤖 Generating AI Summary...")
+        await asyncio.sleep(2)  # Simulate processing time
+        
+        # Display sample summary
+        summary = """
+    📊 Project Status Summary (Demo)
+    ----------------------------
+    • Authentication module is 80% complete
+    • Mobile responsiveness issues need attention
+    • Team is on track for the sprint goal
+    • 3 high-priority tasks to address
+    """
+        print(summary)
+        
+        print("✅ Demo completed successfully!")
+        print("\n💡 To run the full version, please configure the required API keys in the .env file")
+        return 0
+    except Exception as e:
+        print(f"❌ Error in demo mode: {str(e)}", file=sys.stderr)
+        import traceback
+        traceback.print_exc()
+        return 1
+
 async def main():
     """Main entry point for the AutoPM application"""
-    # Initialize and run AutoPM
-    autopm = AutoPM()
-    
-    # For testing: Run a digest cycle immediately
-    # await autopm.run_digest_cycle()
-    
-    # For production: Run the scheduler
-    await autopm.run()
+    # Check for demo flag
+    if "--demo" in sys.argv:
+        await demo_mode()
+        return
+        
+    # Initialize and run AutoPM in normal mode
+    try:
+        autopm = AutoPM()
+        
+        # For testing: Run a digest cycle immediately
+        # await autopm.run_digest_cycle()
+        
+        # For production: Run the scheduler
+        await autopm.run()
+    except Exception as e:
+        logger.error(f"Error running AutoPM: {e}")
+        print(f"❌ Error: {e}")
+        print("\n💡 Try running with --demo flag to see a demo of the functionality")
 
 
 if __name__ == "__main__":

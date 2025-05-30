@@ -1,45 +1,122 @@
 # AutoPM - Autonomous Project Management Assistant
 
-[![Demo Badge](https://img.shields.io/badge/Demo-Local%20Demo%20Available-blue)](https://github.com/aditya01889/AutoPM#demo)
-[![Docker](https://img.shields.io/badge/Docker-Required-2496ED?logo=docker)](https://www.docker.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Demo](https://img.shields.io/badge/Demo-Available-green)](https://github.com/aditya01889/AutoPM#-quick-start)
 
-> **Note**: This is a demo version with sample data. No API keys required to try it out locally!
+> **Note**: Try the demo with sample data - no API keys required!
 
 AutoPM is an AI-powered assistant for Technical Program Managers (TPMs) that automates the process of gathering project updates, summarizing key information, and distributing digests to the team.
 
-## 🚀 Demo
+## 🌟 Features
 
-Experience AutoPM in action with just one command:
+- **Multi-source Integration**: Pull updates from Slack, Jira, and Notion
+- **AI-Powered Summarization**: Generate concise summaries using AI
+- **Automated Scheduling**: Configure daily/weekly digests
+- **Multiple Output Channels**: Deliver updates via Slack or Email
+- **Extensible Architecture**: Easily add new data sources and outputs
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Python 3.8+
+- Docker (optional)
+
+### Running the Demo
 
 ```bash
 # Clone the repository
 git clone https://github.com/aditya01889/AutoPM.git
 cd AutoPM
 
-# Start the demo with Docker Compose
+# Option 1: Run with Docker (recommended)
 docker-compose up --build
 
-# Or run directly (requires Python 3.8+)
+# Option 2: Run locally
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+# On Windows:
+.\venv\Scripts\activate
+# On macOS/Linux:
+# source venv/bin/activate
+
 pip install -r requirements.txt
-python main.py --demo
+python run_demo.py
 ```
 
-### Demo Features:
-- View sample project dashboards
-- Generate mock project summaries
-- See example notifications
-- No API keys required
+## 🖼️ Demo Output
 
-## ✨ Features
+```
+🚀 Starting AutoPM Demo
+----------------------------------------
+📋 Sample Updates from Different Sources:
 
-- **Multi-source Integration**: Pulls updates from Slack, Jira, and Notion
-- **AI-Powered Summarization**: Uses OpenAI's GPT models to generate concise summaries
-- **Automated Scheduling**: Sends daily/weekly digests on a configurable schedule
-- **Multiple Output Channels**: Delivers digests via Slack and/or Email
-- **Extensible Architecture**: Easy to add new data sources and output channels
+🔹 SLACK:
+   • Team meeting scheduled for tomorrow at 10 AM
+   • New feature request from @alice: Add dark mode support
+   • Bug reported by @bob: Login page not loading on mobile
+
+🔹 JIRA:
+   • [PROJ-123] Implement user authentication - In Progress
+   • [PROJ-124] Fix login page layout - Done
+   • [PROJ-125] Add password reset feature - To Do
+
+🔹 NOTION:
+   • Project timeline updated: Phase 1 completion delayed by 2 days
+   • New document added: API Documentation v1.2
+   • Meeting notes from 2023-05-30 uploaded
+
+🤖 Generating AI Summary...
+
+📊 Project Status Summary (Demo)
+----------------------------
+• Authentication module is 80% complete
+• Mobile responsiveness issues need attention
+• Team is on track for the sprint goal
+• 3 high-priority tasks to address
+
+✅ Demo completed successfully!
+```
+
+## 🏗️ Project Structure
+
+```
+AutoPM/
+├── config/           # Configuration files
+├── docs/             # Documentation
+├── fetchers/         # Data source integrations
+├── notifiers/        # Output channels
+├── summarizers/      # AI summarization logic
+├── tests/            # Test suite
+├── .env.example      # Example environment variables
+├── main.py           # Main application entry point
+├── run_demo.py       # Demo script
+├── requirements.txt  # Python dependencies
+└── README.md        # This file
+```
+
+## 📚 Documentation
+
+For detailed documentation, please see the [docs](docs/) directory.
+
+- [Setup Guide](docs/SETUP.md)
+- [Configuration](docs/CONFIGURATION.md)
+- [API Reference](docs/API.md)
+- [Screenshots](docs/SCREENSHOTS.md)
+
+## 🤝 Contributing
+
+Contributions are welcome! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Built with Python
+- Uses various third-party APIs (Slack, Jira, Notion)
+- Inspired by modern project management workflows
 
 ## Prerequisites
 

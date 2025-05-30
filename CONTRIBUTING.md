@@ -1,14 +1,47 @@
 # Contributing to AutoPM
 
-Thank you for your interest in contributing to AutoPM! We welcome contributions from the community.
+Thank you for your interest in contributing to AutoPM! We welcome contributions from the community. By participating in this project, you agree to abide by our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## How to Contribute
 
-1. **Fork** the repository on GitHub
-2. **Clone** the project to your own machine
-3. **Commit** changes to your own branch
-4. **Push** your work back up to your fork
-5. Submit a **Pull Request** so we can review your changes
+### Reporting Bugs
+
+1. **Check Existing Issues**: Before creating a new issue, please check if a similar issue already exists.
+2. **Create an Issue**: If you find a bug, please create a new issue with a clear title and description.
+   - Include steps to reproduce the issue
+   - Add error messages or screenshots if applicable
+   - Specify your environment (OS, Python version, etc.)
+
+### Suggesting Enhancements
+
+1. **Describe the Feature**: Clearly explain the new feature or enhancement.
+2. **Explain Why**: Describe why this feature would be valuable.
+3. **Provide Examples**: If possible, provide examples of the proposed changes.
+
+### Making Code Contributions
+
+1. **Fork the Repository**
+2. **Create a Branch**: Use a descriptive branch name (e.g., `feature/add-slack-commands`)
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. **Make Your Changes**: Follow the coding standards and write tests for new features.
+4. **Run Tests**: Ensure all tests pass before submitting a pull request.
+   ```bash
+   pytest tests/
+   ```
+5. **Commit Your Changes**: Write clear, concise commit messages.
+   ```bash
+   git commit -m "Add feature: brief description of changes"
+   ```
+6. **Push to Your Fork**:
+   ```bash
+   git push origin your-branch-name
+   ```
+7. **Create a Pull Request**:
+   - Reference any related issues
+   - Describe your changes in detail
+   - Request review from maintainers
 
 ## Development Setup
 
