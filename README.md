@@ -1,8 +1,39 @@
 # AutoPM - Autonomous Project Management Assistant
 
+[![Demo Badge](https://img.shields.io/badge/Demo-Local%20Demo%20Available-blue)](https://github.com/aditya01889/AutoPM#demo)
+[![Docker](https://img.shields.io/badge/Docker-Required-2496ED?logo=docker)](https://www.docker.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+> **Note**: This is a demo version with sample data. No API keys required to try it out locally!
+
 AutoPM is an AI-powered assistant for Technical Program Managers (TPMs) that automates the process of gathering project updates, summarizing key information, and distributing digests to the team.
 
-## Features
+## 🚀 Demo
+
+Experience AutoPM in action with just one command:
+
+```bash
+# Clone the repository
+git clone https://github.com/aditya01889/AutoPM.git
+cd AutoPM
+
+# Start the demo with Docker Compose
+docker-compose up --build
+
+# Or run directly (requires Python 3.8+)
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+python main.py --demo
+```
+
+### Demo Features:
+- View sample project dashboards
+- Generate mock project summaries
+- See example notifications
+- No API keys required
+
+## ✨ Features
 
 - **Multi-source Integration**: Pulls updates from Slack, Jira, and Notion
 - **AI-Powered Summarization**: Uses OpenAI's GPT models to generate concise summaries

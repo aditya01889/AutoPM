@@ -39,3 +39,23 @@ ENV/
 # OS
 .DS_Store
 Thumbs.db
+
+# Docker
+.dockerignore
+Dockerfile*
+docker-compose*.yml
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+
+# Development
+*.bak
+*~
+.ropeproject/
+
+# Project specific
+*.db
+*.sqlite3
